@@ -12,7 +12,7 @@ module tb_register;
     wire [15:0] out_o;
 
     // Instancia da UUT (Unit Under Test)
-    register uut (.in(in_i), .load(in_l), .out(out_o));
+    register uut (.in(in_i), .clk(clk), .load(in_l), .out(out_o));
 
     // Como os sinais irao variar durante a simulacao
     initial begin
@@ -25,13 +25,13 @@ module tb_register;
         in_l = 0;
 
         # 0 in_i = $random; in_l = 0; 
-        # 5 in_i = $random; in_l = 0; 
-        # 5 in_i = $random; in_l = 1; 
-        # 5 in_i = $random; in_l = 1;
-        # 5 in_i = $random; in_l = 1; 
-        # 5 in_i = $random; in_l = 1; 
-        # 5 in_i = $random; in_l = 0;
-        # 5 in_i = $random; in_l = 0;  
+        # 2 in_i = 0; in_l = 0; 
+        # 2 in_i = $random; in_l = 1; 
+        # 2 in_i = 0; in_l = 1;
+        # 2 in_i = 0; in_l = 1; 
+        # 2 in_i = $random; in_l = 1; 
+        # 2 in_i = 0; in_l = 0;
+        # 2 in_i = $random; in_l = 0;  
 
         # 5 $finish;
     end

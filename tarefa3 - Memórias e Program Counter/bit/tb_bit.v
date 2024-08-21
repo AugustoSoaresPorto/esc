@@ -12,7 +12,7 @@ module tb_bit;
     wire out_o;
 
     // Instancia da UUT (Unit Under Test)
-    bit uut (.in(in_i), .load(in_l), .out(out_o));
+    bit uut (.in(in_i), .clk(clk), .load(in_l), .out(out_o));
 
     // Como os sinais irao variar durante a simulacao
     initial begin
@@ -25,13 +25,13 @@ module tb_bit;
         in_l = 0;
 
         # 0 in_i = 1; in_l = 0; 
-        # 5 in_i = 0; in_l = 0; 
-        # 5 in_i = 1; in_l = 1; 
-        # 5 in_i = 0; in_l = 1;
-        # 5 in_i = 0; in_l = 1; 
-        # 5 in_i = 1; in_l = 1; 
-        # 5 in_i = 0; in_l = 0;
-        # 5 in_i = 1; in_l = 0;  
+        # 2 in_i = 0; in_l = 0; 
+        # 2 in_i = 1; in_l = 1; 
+        # 2 in_i = 0; in_l = 1;
+        # 2 in_i = 0; in_l = 1; 
+        # 2 in_i = 1; in_l = 1; 
+        # 2 in_i = 0; in_l = 0;
+        # 2 in_i = 1; in_l = 0;  
 
         # 5 $finish;
     end

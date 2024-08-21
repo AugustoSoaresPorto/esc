@@ -3,43 +3,51 @@
 `include "dff.v"
 
 module tb_dff;
-    // clock simulado
-    reg clk;
+  
+  // clock simulado
+  reg clk;
+  reg rst;
 
-    // sinais
-    reg in_d;
-    wire out_q;
-    wire out_nq;
+  // sinais
+  reg d;
+  wire q;
+  wire qn;
 
-    // Instancia da UUT (Unit Under Test)
-    dff uut (.d(in_d), .q(out_q), .nq(out_nq));
+  // Instancia da UUT (Unit Under Test)
+  dff uut (d,clk,rst,q,qn);
 
-    // Como os sinais irao variar durante a simulacao
-    initial begin
-        $display("dff");
-        $dumpfile("signals.vcd");
-        $dumpvars(0,tb_dff);
-        clk = 0;
+   // Como os sinais irao variar durante a simulacao
+  initial begin
+    $display("DFF");
+    $dumpfile("signals.vcd");
+    $dumpvars(0,tb_dff);
+    clk = 0;
+    rst = 0;
+    d = 0;
 
-        in_d = 0;
+    # 1 rst = 1;
+    # 1 rst = 0; 
+    # 2 d = 0;  
+    # 2 d = 1; 
+    # 2 d = 1; 
+    # 2 d = 0; 
+    # 2 d = 1; 
+    # 1 rst = 1;
+    # 1 rst = 0;
 
-        # 0 in_d = 1; 
-        # 5 in_d = 0; 
-        # 5 in_d = 1; 
-        # 5 in_d = 0;
-        # 5 in_d = 1; 
+    # 5 $finish;
+  end
 
-        # 5 $finish;
-    end
+  // Monitora os sinais
+  initial begin
+    $monitor(rst,clk,d,q,qn);
+  end
 
-    // Monitora os sinais
-    initial begin
-        $monitor("t=%03d: \tclk=%d,d=%d,q=%d,nq=%d \n",$time,clk,in_d,out_q,out_nq);
-    end
+ // gerador de clock com bloco always de unica linha
+  always 
+    #1 clk = ~clk;
 
-    // gerador de clock com bloco always de unica linha
-    always 
-        #1 clk = ~clk;
+
 
 endmodule
 
