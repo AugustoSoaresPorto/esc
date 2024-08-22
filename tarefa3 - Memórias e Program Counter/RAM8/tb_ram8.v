@@ -27,13 +27,13 @@ module tb_ram8;
         in_l = 0;
 
         # 0 in_i = $random; in_l = 1;  in_a = 3'b000;
-        # 2 in_i = 0; in_l = 1;  in_a = 3'b000;
-        # 2 in_i = $random; in_l = 1;  in_a = 3'b000;
-        # 2 in_i = 0; in_l = 1;  in_a = 3'b011;
-        # 2 in_i = 0; in_l = 1;  in_a = 3'b011;
-        # 2 in_i = $random; in_l = 1;  in_a = 3'b111;
-        # 2 in_i = 0; in_l = 1;  in_a = 3'b111;
-        # 2 in_i = $random; in_l = 0;  in_a = 3'b111;
+        # 5 in_i = 0; in_l = 1;  in_a = 3'b000;
+        # 5 in_i = $random; in_l = 1;  in_a = 3'b000;
+        # 5 in_i = 0; in_l = 1;  in_a = 3'b011;
+        # 5 in_i = 0; in_l = 1;  in_a = 3'b011;
+        # 5 in_i = $random; in_l = 1;  in_a = 3'b111;
+        # 5 in_i = 0; in_l = 1;  in_a = 3'b111;
+        # 5 in_i = $random; in_l = 0;  in_a = 3'b111;
 
         # 5 $finish;
     end

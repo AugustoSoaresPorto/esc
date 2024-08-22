@@ -27,14 +27,14 @@ module tb_ram64;
         in_l = 1;
 
         # 0 in_i = $random; in_l = 1;  in_a = 6'b000000;
-        # 2 in_i = 0; in_l = 1;  in_a = 6'b000000;
-        # 2 in_i = $random; in_l = 1;  in_a = 6'b000011;
-        # 2 in_i = 0; in_l = 1;  in_a = 6'b000011;
-        # 2 in_i = $random; in_l = 1;  in_a = 6'b000111;
-        # 2 in_i = 0; in_l = 1;  in_a = 6'b000111;
-        # 2 in_i = $random; in_l = 1;  in_a = 6'b111111;
-        # 2 in_i = 0; in_l = 1;  in_a = 6'b111111;
-        # 2 in_i = $random; in_l = 0;  in_a = 6'b111111;
+        # 5 in_i = 0; in_l = 1;  in_a = 6'b000000;
+        # 5 in_i = $random; in_l = 1;  in_a = 6'b000011;
+        # 5 in_i = 0; in_l = 1;  in_a = 6'b000011;
+        # 5 in_i = $random; in_l = 1;  in_a = 6'b000111;
+        # 5 in_i = 0; in_l = 1;  in_a = 6'b000111;
+        # 5 in_i = $random; in_l = 1;  in_a = 6'b111111;
+        # 5 in_i = 0; in_l = 1;  in_a = 6'b111111;
+        # 5 in_i = $random; in_l = 0;  in_a = 6'b111111;
         
         # 5 $finish;
     end

@@ -25,13 +25,13 @@ module tb_register;
         in_l = 0;
 
         # 0 in_i = $random; in_l = 0; 
-        # 2 in_i = 0; in_l = 0; 
-        # 2 in_i = $random; in_l = 1; 
-        # 2 in_i = 0; in_l = 1;
-        # 2 in_i = 0; in_l = 1; 
-        # 2 in_i = $random; in_l = 1; 
-        # 2 in_i = 0; in_l = 0;
-        # 2 in_i = $random; in_l = 0;  
+        # 5 in_i = 0; in_l = 0; 
+        # 5 in_i = $random; in_l = 1; 
+        # 5 in_i = 0; in_l = 1;
+        # 5 in_i = 0; in_l = 1; 
+        # 5 in_i = $random; in_l = 1; 
+        # 5 in_i = 0; in_l = 0;
+        # 5 in_i = $random; in_l = 0;  
 
         # 5 $finish;
     end
