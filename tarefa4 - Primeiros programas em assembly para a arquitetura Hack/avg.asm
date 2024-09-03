@@ -1,9 +1,7 @@
 // R0 = avg(R1,R2)  Crie um código capaz de calcular a média entre um total de R2 valores armazenados a partir da posição apontada por R1, deixando o resultado em R0. Por exemplo, Se R1 contiver o valor 100 e R2 o valor 10, os valores da memória RAM armazenados entre os endereços 100 a 109 devem ser somados e o resultado divido por 10. Reuse código feito anteriormente.
 
-
 @I
 M=0            // RI = 0
-
 @0
 M=0            // R0 = 0
 
@@ -14,7 +12,7 @@ M=0            // R0 = 0
     @2
     D=D-M
 
-    @FIM
+    @AJUSTE
     D;JEQ
 
     @I
@@ -29,12 +27,16 @@ M=0            // R0 = 0
     @SOMA
     0;JMP            // goto SOMA
 
-@0
-D=M              // D = R0
-@1
-M=D              // R1 = R0
-@0
-M=0              // R0 = 0
+(AJUSTE)
+    @0
+    D=M              // D = R0
+    @1
+    M=D              // R1 = R0
+    @0
+    M=0              // R0 = 0
+
+    @DIVISAO
+    0;JMP            // goto DIVISAO
 
 (DIVISAO)
     @2
