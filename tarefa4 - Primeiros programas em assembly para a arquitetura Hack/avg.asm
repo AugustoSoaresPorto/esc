@@ -4,6 +4,8 @@
 M=0            // RI = 0
 @0
 M=0            // R0 = 0
+@SOMA
+0;JMP
 
 (SOMA)
     @I
