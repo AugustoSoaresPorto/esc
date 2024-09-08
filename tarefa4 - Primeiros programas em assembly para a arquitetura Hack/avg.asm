@@ -9,7 +9,6 @@ M=0            // R0 = 0
 
 (SOMA)
     @I
-    M=M+1
     D=M
     @2
     D=D-M
@@ -25,6 +24,9 @@ M=0            // R0 = 0
     D=M              // D = M[R1 + RI]
     @0
     M=M+D            // R0 = R0 + M[R1 + RI]
+
+    @I
+    M=M+1
 
     @SOMA
     0;JMP            // goto SOMA
