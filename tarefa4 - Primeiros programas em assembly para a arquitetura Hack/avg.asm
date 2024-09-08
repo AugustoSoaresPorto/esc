@@ -52,11 +52,11 @@ M=0            // R0 = 0
     M=M+1            // R0 = R0 + 1
 
     @1
-    D = M
+    D=M
     @2
-    D = D-M
+    D=D-M
     @FIM
-    D,JLT            // se D<0 (RESTO R1 < DIVISOR R2) goto FIM
+    D;JLT            // se D<0 (RESTO R1 < DIVISOR R2) goto FIM
 
     @DIVISAO
     0;JMP            // goto DIVISAO
