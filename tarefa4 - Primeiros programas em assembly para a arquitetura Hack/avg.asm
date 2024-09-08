@@ -5,7 +5,7 @@ M=0            // RI = 0
 @0
 M=0            // R0 = 0
 @SOMA
-D;JMP
+0;JMP
 
 (SOMA)
     @I
